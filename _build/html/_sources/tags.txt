@@ -7,21 +7,25 @@ Variables
 ---------
 On each page these variables are available:
 
-* {abp_pages} - this is a tag pair loop with the links and in many cases the only thing you'll use. If so, skip to the description below.
-* {abp_first_link} - the link to the first page
-* {abp_last_link} - the link to the last page
-* {abp_total_pages} - the total number of pages
-* {abp_entry_from} - the start entry number on the current page
-* {abp_entry_to} - the last entry number on the current page
-* {abp_total_entries} - the total number of entries
-* {abp_per_page} - the number of entries per page
-* {abp_current_page_num} - the current page number, starting on 0 (zero-based indexing)
-* {abp_current_page_num_liber} - the current page number, starting on 1
-* {abp_previous_page_num} - the previous page number (zero-based indexing)
-* {abp_previous_link} - the link to the previous page
-* {abp_next_page_num} - the page number of the next page (zero-based indexing)
-* {abp_next_link} - the link to the next page
-* {abp_query_string} - contain the query strings, if any (for this to work config param enable_query_strings in EE must be set to TRUE)
+============================    ============
+Variable  					   	Explanation
+============================    ============
+{abp_pages}  					this is a tag pair loop with the links and in many cases the only thing you'll use. If so, skip to the description below.
+{abp_first_link}				the link to the first page
+{abp_last_link}					the link to the last page
+{abp_total_pages}				the total number of pages
+{abp_entry_from}				the start entry number on the current page
+{abp_entry_to} 					the last entry number on the current page
+{abp_total_entries} 			the total number of entries
+{abp_per_page}					the number of entries per page
+{abp_current_page_num} 			the current page number, starting on 0 (zero-based indexing)
+{abp_current_page_num_liber}	the current page number, starting on 1
+{abp_previous_page_num}			the previous page number (zero-based indexing)
+{abp_previous_link}				the link to the previous page
+{abp_next_page_num}				the page number of the next page (zero-based indexing)
+{abp_next_link}					the link to the next page
+{abp_query_string}				contain the query strings, if any (for this to work config param enable_query_strings in EE must be set to TRUE)
+============================    ============                
 
 Conditionals
 ------------
