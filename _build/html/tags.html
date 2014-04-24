@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tags &mdash; AB Pagination 1.6.4 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.6.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="AB Pagination 1.6.4 documentation" href="index.html" />
+    <link rel="prev" title="Settings" href="settings.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="settings.html" title="Settings"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">AB Pagination 1.6.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tags">
+<h1>Tags<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h1>
+<p>AB Pagination will make a bunch of additional conditionals and variables available inside the {paginate} tag pair that resides inside the {exp:channel:entries} tag.</p>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>On each page these variables are available:</p>
+<ul class="simple">
+<li>{abp_pages} - this is a tag pair loop with the links and in many cases the only thing you&#8217;ll use. If so, skip to the description below.</li>
+<li>{abp_first_link} - the link to the first page</li>
+<li>{abp_last_link} - the link to the last page</li>
+<li>{abp_total_pages} - the total number of pages</li>
+<li>{abp_entry_from} - the start entry number on the current page</li>
+<li>{abp_entry_to} - the last entry number on the current page</li>
+<li>{abp_total_entries} - the total number of entries</li>
+<li>{abp_per_page} - the number of entries per page</li>
+<li>{abp_current_page_num} - the current page number, starting on 0 (zero-based indexing)</li>
+<li>{abp_current_page_num_liber} - the current page number, starting on 1</li>
+<li>{abp_previous_page_num} - the previous page number (zero-based indexing)</li>
+<li>{abp_previous_link} - the link to the previous page</li>
+<li>{abp_next_page_num} - the page number of the next page (zero-based indexing)</li>
+<li>{abp_next_link} - the link to the next page</li>
+<li>{abp_query_string} - contain the query strings, if any (for this to work config param enable_query_strings in EE must be set to TRUE)</li>
+</ul>
+</div>
+<div class="section" id="conditionals">
+<h2>Conditionals<a class="headerlink" href="#conditionals" title="Permalink to this headline">¶</a></h2>
+<p>On each page these conditionals are available:</p>
+<ul class="simple">
+<li>{if abp_has_previous} - does this page have a previous page? (if not, we&#8217;re on the first)</li>
+<li>{if abp_has_next} - does the current page have a next page? (if not, we&#8217;re on the last)</li>
+<li>{if abp_last_page_not_linked} - true if the last page is not linked in the {abp_pages} loop (yes, this can actually come handy in some cases)</li>
+</ul>
+</div>
+<div class="section" id="the-ab-pages-tag-pair">
+<h2>The {ab_pages} tag pair<a class="headerlink" href="#the-ab-pages-tag-pair" title="Permalink to this headline">¶</a></h2>
+<p>The {abp_pages} tag pair has its own set of variables and conditionals, and since this is the most important tag it gets its own section here in the documentation.</p>
+</div>
+<div class="section" id="abp-pages-parameters">
+<h2>{abp_pages} Parameters<a class="headerlink" href="#abp-pages-parameters" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>padding - optional, defaults to 3. If you do not want padding, set this to &#8220;no&#8221;</li>
+<li>padding_left - optional, padding on the left side of the current page</li>
+<li>padding_right - optional, padding on the right side of the current page</li>
+<li>initial_size - optional, sets the initial number of pagelinks to show (by default the padding will decide this)</li>
+<li>fixed_size - optional, sets a fixed number of pagelinks to show (this will override all other settings, ie. padding and initial_size .. so just use like this: {abp_pages fixed_size=&#8221;5&#8221;} )</li>
+<li>{abp_pages} Variables</li>
+<li>{abp_link} - the link to the page</li>
+<li>{abp_num} - the page number of the page (zero based)</li>
+<li>{abp_previous_link} - the link to the previous page (empty if none)</li>
+<li>{abp_previous_num} - the page number of the previous page (zero based)</li>
+<li>{abp_next_link} - the link to the next page (empty if none)</li>
+<li>{abp_next_num} - the page number of the next page (zero based)</li>
+</ul>
+</div>
+<div class="section" id="abp-pages-conditionals">
+<h2>{abp_pages} Conditionals<a class="headerlink" href="#abp-pages-conditionals" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>{if abp_is_current} - true if the current page in the loop is the current page</li>
+<li>{if abp_is_last_page} - true if the current page in the loop is the last page</li>
+<li>{if abp_is_first_page} - true if the current page in the loop is the first page</li>
+<li>{if abp_has_previous} - true if the current page in the loop has a previous page</li>
+<li>{if abp_has_next} - true if the current page in the loop has a next page</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Tags</a><ul>
+<li><a class="reference internal" href="#variables">Variables</a></li>
+<li><a class="reference internal" href="#conditionals">Conditionals</a></li>
+<li><a class="reference internal" href="#the-ab-pages-tag-pair">The {ab_pages} tag pair</a></li>
+<li><a class="reference internal" href="#abp-pages-parameters">{abp_pages} Parameters</a></li>
+<li><a class="reference internal" href="#abp-pages-conditionals">{abp_pages} Conditionals</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="settings.html"
+                        title="previous chapter">Settings</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tags.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="settings.html" title="Settings"
+             >previous</a> |</li>
+        <li><a href="index.html">AB Pagination 1.6.4 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Wedoaddons.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.
+    </div>
+  </body>
+</html>
